@@ -250,15 +250,15 @@ class searchView extends view {
     mediator.unsubscribe("window_click", this.handleClick);
 
     if(UserAgent.getBrowserInfo().mobile) {
-      window.remove('touchmove', this.draw);
-      window.remove('touchstart', this.handleMouseDown);
-      window.remove('touchend', this.handleMouseUp);
+      window.removeEventListener('touchmove', this.draw);
+      window.removeEventListener('touchstart', this.handleMouseDown);
+      window.removeEventListener('touchend', this.handleMouseUp);
     } else {
-      window.remove('mousemove', this.draw);
-      window.remove('mousedown', this.handleMouseDown);
-      window.remove('mouseup', this.handleMouseUp);
-      window.remove("mouseover", this.handleMouseOver);
-      window.remove('mouseout', this.handleMouseOut);      
+      window.removeEventListener('mousemove', this.draw);
+      window.removeEventListener('mousedown', this.handleMouseDown);
+      window.removeEventListener('mouseup', this.handleMouseUp);
+      window.removeEventListener("mouseover", this.handleMouseOver);
+      window.removeEventListener('mouseout', this.handleMouseOut);      
     }
   }
 
